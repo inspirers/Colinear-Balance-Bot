@@ -42,7 +42,7 @@ Allows the user to control the robot manually with a DualShock (PlayStation) 4 c
 Note: Due to the usage of `time.sleep()` in the main loop,
 the delay between iterations isn't very precise (1ms ±0.5ms).
 
-Install guide Raspberry Pi OS
+### Install guide Raspberry Pi OS:
 ----------------
 
 Install required packages for Raspberry Pi OS
@@ -55,3 +55,24 @@ Install pip packages
 ```
 # pip3 install -r requirements.txt
 ```
+### Raspberry Pi technical details:
+-----------------
+#### Credentials for Raspberry Pi;
+```
+username: pi
+password: raspberry
+``` 
+#### Credentials for WLAN Raspberry Pi; 
+```
+SSID: Pi3-AP 
+Password: pimylifeup
+```
+
+### External GPIO Monitor
+----------------- 
+```
+Model: HyperPixel 4.0 - Hi-Res Display for Raspberry Pi
+Refresh rate: 60 Hz
+Resolution: 800x480
+```
+The monitor uses all of the available GPIO pins however in order for other hardware to utilize the pins communication through i2c can be utilized. 

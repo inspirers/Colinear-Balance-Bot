@@ -55,7 +55,7 @@ class Sensors:
         print("HWLLO")
         self.channel = channel
         self.address = addr
-        self.bus = SMBus(self.channel)
+        self.bus = SMBus(self.channel) #Some error appear here
         self.a = 0.98  # Complimentary filter coefficient
         self.gyro_LSB = 131  # From datasheet
         self.timestamp = time.time()  # Time of last measurement

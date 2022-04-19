@@ -114,12 +114,12 @@ class ManualNavigator:
         return not self.fallen_over
 
     def print_telemetry(self):
-        print(f"Setpoint: {math.degrees(self.pid.setpoint)}")
-        print(f"Angle: {math.degrees(self.angle)}\tOutput: {self.pid_output}")
+        #print(f"Setpoint: {math.degrees(self.pid.setpoint)}")
+        #print(f"Angle: {math.degrees(self.angle)}\tOutput: {self.pid_output}")
 
-    @property
-    def fallen_over(self):
-        if abs(self.imu.angle) > self.MAX_ANGLE:
-            print("has fallen over, ", math.degrees(self.imu.angle), "\t", math.degrees(self.MAX_ANGLE))
-            return True
-        return False
+        @property
+        def fallen_over(self):
+            if abs(self.imu.angle) > self.MAX_ANGLE:
+                print("has fallen over, ", math.degrees(self.imu.angle), "\t", math.degrees(self.MAX_ANGLE))
+                return True
+            return False

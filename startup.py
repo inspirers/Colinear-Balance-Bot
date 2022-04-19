@@ -27,7 +27,7 @@ def find_controller():
             heartbeat_state = not heartbeat_state
             indicate(1, color)
             time.sleep(1)
-    
+    print(joy.get_name())
     indicate(1, search_color)
     
     ready_for_boot = False
