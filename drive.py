@@ -2,7 +2,7 @@
 
 import odrive
 from odrive.enums import *
-from indicator import indicate
+#from indicator import indicate
 import time
 import yaml
 
@@ -64,22 +64,22 @@ class OdriveController:
             self.drives.append(odrv)
             self.axises.extend((odrv.axis0, odrv.axis1))
         print("ODrives found")
-        indicate(2, (255, 0, 255))
+        #indicate(2, (255, 0, 255))
         for drive in self.drives:
                 voltage = drive.vbus_voltage
                 print("Voltage: ", voltage)
 
-                if voltage < 17.0:
+                if voltage < 17.0: #Has to be high than 17 volt.
                     print("Low Voltage! Charge the battery and try again. Program will NOT proceed.")
                     while True:
-                        indicate(2, (255, 0, 0))
+                        #indicate(2, (255, 0, 0))
                         time.sleep(0.1)
-                        indicate(2, (0, 0, 0))
+                        #indicate(2, (0, 0, 0))
                         time.sleep(0.2)
                 
                 color_green = int((voltage - 17)/(21 - 17) * 255)
                 color_red = int((voltage - 17)/(21 - 17)*(0 - 255) + 255)
-                indicate(0, (color_red, color_green, 0))
+                #indicate(0, (color_red, color_green, 0))
 
     def configure(self, config):
         """Updates configuration of all motors and axises
@@ -121,12 +121,12 @@ class OdriveController:
                     return False
             return True
 
-        print("Starting calibration...")
+        print("Starting calibration...") #Before use motors will be calibrated
         self.set_axis_state(AXIS_STATE_FULL_CALIBRATION_SEQUENCE)
         while not calibration_finished():
             time.sleep(0.1)
         print("Calibration finished.")
-        indicate(2, (0, 255, 0))
+        #indicate(2, (0, 255, 0))
 
     def dump_errors(self):
         """Prints errors on all axises."""
