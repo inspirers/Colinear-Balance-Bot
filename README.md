@@ -1,5 +1,5 @@
 # Colinear Balance Bot
-Git Repo for Sunkworks' Colinear Balancing Robot.
+Git Repo for GTGs' Colinear Balancing Robot.
 
 ## Basic operation
 To operate the robot two criteria must be met: 

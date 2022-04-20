@@ -1,7 +1,7 @@
 import pygame
 import time
 import os
-from multiprocessing import Process
+#from multiprocessing import Process
 
 
 class RemoteController:
@@ -61,7 +61,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-
+"""
 processes = []
 
 for i in range(os.cpu_count()):
@@ -73,3 +73,4 @@ for process in processes:
 
 for process in processes:
 	process.join()
+    """

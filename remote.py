@@ -2,7 +2,8 @@ import pygame #Used for controller
 import time #Delay
 #from indicator import * #Indication for LED not in use
 import os # for mp and other stuff
-from multiprocessing import Process #mp=multiproccessing
+
+#from multiprocessing import Process #mp=multiproccessing
 
 class RemoteController:
     def __init__(self):
@@ -76,7 +77,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+"""
 processes = [] #Creates multiple processes so the CPU can use all of the cores
 
 for i in range(os.cpu_count()):
@@ -88,3 +89,4 @@ for process in processes:
 
 for process in processes:
 	process.join()
+    """
