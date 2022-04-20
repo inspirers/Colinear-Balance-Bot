@@ -11,6 +11,13 @@ from remote import RemoteController
 #from indicator import indicate
 from startup import find_controller
 
+if "XDG_RUNTIME_DIR" not in os.environ:
+    os.environ["XDG_RUNTIME_DIR"] = "/tmp/runtime-root"
+try:
+    os.environ["DISPLAY"]
+except:
+    os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 def main():
     #find_controller()
     p1 = mp.Process(target=find_controller, args=())
