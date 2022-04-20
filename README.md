@@ -36,7 +36,7 @@ Planned feature: set rpm offset to the rest of the motors, to drive collinearly 
 
 
 ##### Not yet finished:
-`remote.py` - **TODO**: turn into API for dualshock controller
+`remote.py` - **TODO**: turn into API for dualshock controller. Not necessary because Bluetooth is used instead.
 
 ### Examples / Working implementations:
 `manual_navigator.py` and `main.py` - An middleware and matching main loop.
