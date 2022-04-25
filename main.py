@@ -19,7 +19,7 @@ except:
     os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 def main():
-    find_controller()
+    #find_controller() #Finding controller again not neccesary
     #p1 = mp.Process(target=find_controller, args=())
     #p1.start()
 
