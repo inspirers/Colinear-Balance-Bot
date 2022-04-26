@@ -7,39 +7,21 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'pid'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=pid",
-                    "--package=pid"
-                ],
-                "filter": {
-                    "name": "pid",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}/pid/"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'pid'",
+            "name": "Debug unit tests in library 'rust_lib'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=pid",
-                    "--package=pid"
+                    "--lib",
+                    "--package=rust_from_python"
                 ],
                 "filter": {
-                    "name": "pid",
-                    "kind": "bin"
+                    "name": "rust_lib",
+                    "kind": "lib"
                 }
             },
             "args": [],
-            "cwd": "${workspaceFolder}/pid/"
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
