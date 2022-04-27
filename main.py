@@ -7,16 +7,19 @@ import simple_navigator
 import os
 #import neopixel
 #import board
-from remote import RemoteController
 #from indicator import indicate
+from remote import RemoteController
 from startup import find_controller
 
-if "XDG_RUNTIME_DIR" not in os.environ:
+if "XDG_RUNTIME_DIR" not in os.environ: #Removes error becuase when no monitor is connected it gives error.
     os.environ["XDG_RUNTIME_DIR"] = "/tmp/runtime-root"
+    
+"""
 try:
     os.environ["DISPLAY"]
 except:
     os.environ["SDL_VIDEODRIVER"] = "dummy"
+"""
 
 def main():
     #find_controller() #Finding controller again not neccesary
