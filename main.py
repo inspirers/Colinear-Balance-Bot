@@ -22,7 +22,7 @@ except:
 """
 
 def main():
-    #find_controller() #Finding controller again not neccesary
+    find_controller() #Finds controller and starts calibration
     #p1 = mp.Process(target=find_controller, args=())
     #p1.start()
 
