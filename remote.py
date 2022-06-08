@@ -1,6 +1,5 @@
 import pygame
 import time
-from indicator import *
 
 class RemoteController:
     def __init__(self):
@@ -36,10 +35,10 @@ class RemoteController:
         return self.get_axis(0)
 
     def get_ry_axis(self):
-        return -self.get_axis(5)
+        return -self.get_axis(4)
 
     def get_rx_axis(self):
-        return self.get_axis(2)
+        return self.get_axis(3)
     
     def get_button(self, button):
         pygame.event.get()

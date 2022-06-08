@@ -1,3 +1,7 @@
+#Changes
+Removed indicator
+Updated axis with new controller
+Added controller_detect.py
 # Colinear Balance Bot
 Git Repo for Sunkworks' Colinear Balancing Robot.
 

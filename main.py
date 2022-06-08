@@ -5,8 +5,16 @@ import os
 import neopixel
 import board
 from remote import RemoteController
-from indicator import indicate
 from startup import find_controller
+
+if "XDG_RUNTIME_DIR" not in os.environ:
+    os.environ["XDG_RUNTIME_DIR"] = "/tmp/runtime-root"
+"""
+try:
+    os.environ["DISPLAY"]
+except:
+    os.environ["SDL_VIDEODRIVER"] = "dummy"
+"""
 
 def main():
     find_controller()
@@ -14,17 +22,14 @@ def main():
     heartbeat_color = (255, 0, 255)
     heartbeat_state = True
 
-    indicate(2, (255, 255, 0))
     navigator = simple_navigator.ManualNavigator()
     
-    indicate(0, (255, 255, 255))
     while not navigator.get_button(1):
         time.sleep(0.1)
 
     try:
         while True:
             navigator.start()
-            indicate(0,(0, 255, 0))
             iter_count = 0
             max_iter_count = 1000
             while not navigator.fallen_over:
@@ -32,7 +37,6 @@ def main():
 
                 if not iter_count % 32:
                     color = heartbeat_color if heartbeat_state else (255, 255, 255)
-                    indicate(0, color)
                     heartbeat_state = not heartbeat_state
                     navigator.update_constants()
                     navigator.print_telemetry()
@@ -44,7 +48,6 @@ def main():
                 time.sleep(0.001)
 
             navigator.stop()
-            indicate(0, (255, 0, 0))
             print("Manual halt or angle threshold reached, press x to enable motors")
             while not navigator.get_button(1):
                 time.sleep(0.1)
@@ -53,8 +56,7 @@ def main():
         navigator.stop()
         navigator.cleanup()
         for i in range(3):
-            indicate(i, (255, 0, 0))
-
+            ()
 
 if __name__ == '__main__':
     main()
