@@ -8,7 +8,7 @@ import mpu
 import remote
 from simple_pid import PID
 
-i2c = 11 #Indicate which i2c device to use
+i2c = 1 #Indicate which i2c device to use
 class ManualNavigator:
     def __init__(self, max_angle=45, max_setpoint_angle=12.5, scaling_factor=1000, max_collinear_offset=120000):
         self.MAX_ANGLE = math.radians(max_angle)
