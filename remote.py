@@ -39,10 +39,10 @@ class RemoteController:
         return self.get_axis(0)
 
     def get_ry_axis(self):
-        return -self.get_axis(5)
+        return -self.get_axis(4)
 
     def get_rx_axis(self):
-        return self.get_axis(2)
+        return self.get_axis(3)
     
     def get_button(self, button):
         pygame.event.get()
@@ -77,6 +77,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
 """
 processes = [] #Creates multiple processes so the CPU can use all of the cores
 

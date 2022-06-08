@@ -1,3 +1,9 @@
+#Changes
+Fixed axis for conteroller
+Added controller.py detect connected conteroller
+Multiprocessing inactive
+Removed indicator (LED)
+Possible to work wirh Rust through a pre-created Rust project
 # Colinear Balance Bot
 Git Repo for GTGs' Colinear Balancing Robot.
 
